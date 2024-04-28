@@ -71,29 +71,27 @@ const Card = () => {
   );
 };
 
-/* gsap.from(".card", {
-  opacity: 0,
-  duration: 2,
-  y: 100,
-}); */
-
 gsap.from(".card", {
   y: 20,
   opacity: 0,
   duration: 1,
   scale: 0.2,
   stagger: 0.5,
-  scrollTrigger: ".card",
+  scrollTrigger: {
+    trigger: ".card",
+    scroller: "body",
+    scrub: 1,
+  },
 });
 
 gsap.to(".event-heading", {
-  y: -20,
-  duration: 3,
+  y: -200,
+  duration: 1,
   opacity: 0,
   scrollTrigger: {
     trigger: ".events-box",
     scroller: "body",
-    // scrub: 2,
+    scrub: 1,
   },
 });
 
