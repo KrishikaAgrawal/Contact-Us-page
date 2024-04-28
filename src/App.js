@@ -5,8 +5,8 @@ import Event from "./component/Events/Event";
 function App() {
   return (
     <>
-      {/* <ContactUs /> */}
-      <Event />
+      <ContactUs />
+      {/* <Event /> */}
     </>
   );
 }

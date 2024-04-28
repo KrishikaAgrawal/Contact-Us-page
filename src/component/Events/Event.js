@@ -3,7 +3,7 @@ import React from "react";
 import { TbMapShare } from "react-icons/tb";
 import { FaRegClock } from "react-icons/fa";
 
-import { gsap } from "gsap";
+import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +22,7 @@ const Event = () => {
         </h1>
       </div>
       {/* Events */}
-      <div className="events-box flex flex-wrap mx-10 mt-20">
+      <div className="events-box flex flex-wrap mx-10 mt-20 mb-20">
         <Card />
         <Card />
         <Card />
@@ -85,7 +85,7 @@ gsap.from(".card", {
 });
 
 gsap.to(".event-heading", {
-  y: -200,
+  y: -100,
   duration: 1,
   opacity: 0,
   scrollTrigger: {

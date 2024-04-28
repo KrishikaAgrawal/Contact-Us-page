@@ -3,8 +3,8 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactUs = () => {
@@ -79,7 +79,7 @@ const ContactUs = () => {
             />
             <textarea
               name="message"
-              className="mb-4 w-full px-3 h-40 border border-gray-400"
+              className="mb-4 w-full px-3 py-2 h-40 border border-gray-400"
               placeholder="Message"
               required
             ></textarea>
@@ -113,10 +113,15 @@ const ContactUs = () => {
   );
 };
 
-gsap.from(".contact-hero .contact-us", {
+gsap.to(".contact-hero .contact-us", {
+  y: -100,
+  duration: 1,
   opacity: 0,
-  duration: 2,
-  y: 100,
+  scrollTrigger: {
+    trigger: ".contact-section",
+    scroller: "body",
+    scrub: 1,
+  },
 });
 
 export default ContactUs;
